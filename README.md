@@ -1,2 +1,2 @@
 # bill-me-docs
-Bill me repo documentation
+Bill me lib documentation
