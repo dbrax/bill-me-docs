@@ -1,40 +1,56 @@
 ---
-title: Installation
-description: 'Install all the things....'
-updated_by: d73c1391-a10f-4f96-a8d1-30cc427a0b6a
-updated_at: 1585305629
 id: 586d4f7c-c6d5-4858-837a-fd2829e04f87
+blueprint: pages
+title: Installation
+description: 'Bill-me package can easily be added or installed on your application'
+updated_by: b5e10532-9e62-4a0b-ade2-4803339d6a5b
+updated_at: 1629570942
 ---
-Like Statamic, you'll need to have Composer installed before doing anything.
+This package can be used with Laravel 7.1 or higher.
 
-As long as you've got that installed, along with the other requirements, just run through these steps.
 
-**1. Create a new site** by cloning the repo and removing the Gitness
-```
-git clone git@github.com:doublethreedigital/docs-starter-kit docs-site
-cd docs-site
-rm -rf .git
-composer install
-cp .env.example .env && php artisan key:generate
-```
 
-**2. Make a new user** - make sure it'a a super so you can login to the CP
-```
-php please make:user
-```
+1. This package publishes a config/bill-me.php file. If you already have a file by that name, you must rename or remove it.
 
-**3. Recompile the CSS** (only if you wanna)
-This starter kit uses TailwindCSS and PurgeCSS, meaning it has a build process. 
+
+2. You can install the package via composer:
+
+```bash
+composer require epmnzava/bill-me
 ```
-yarn && yarn dev
+3. After running the command you will need to publish it's configurations by running
+
+```php
+
+php artisan vendor:publish --provider="Epmnzava\BillMe\BillMeServiceProvider"
+
 ```
 
-And if you want to do it for production:
-```
-yarn prod
+4. Optional: The service provider will automatically get registered. Or you may manually add the service provider in your config/app.php file:
+
+```php
+
+'providers' => [
+    // ...
+    Epmnzava\BillMe\BillMeServiceProvider::class,
+];
+
 ```
 
-**4. Do your thing!**
-If you're using Valet, your site should be good to go at `http://docs-site.test`.
+5. Clear your config cache. This package requires access to the bill-me config. Generally it's bad practice to do config-caching in a development environment. If you've been caching configurations locally, clear your config cache with either of these commands:
 
-Enjoy!!
+```php 
+
+ php artisan optimize:clear
+ # or
+ php artisan config:clear
+ 
+ ```
+
+6. Run the migrations: After the config and migration have been published and configured, you can create the tables for this package by running:
+
+```php 
+
+ php artisan migrate
+ 
+ ```

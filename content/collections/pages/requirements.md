@@ -1,16 +1,11 @@
 ---
+id: 895d764f-6dde-47a8-8b48-6b0662ab22a8
+blueprint: pages
 title: Requirements
 description: 'Stuff you''ll need for this kit to work'
-updated_by: d73c1391-a10f-4f96-a8d1-30cc427a0b6a
-updated_at: 1585304576
-id: 895d764f-6dde-47a8-8b48-6b0662ab22a8
+updated_by: b5e10532-9e62-4a0b-ade2-4803339d6a5b
+updated_at: 1629571085
 ---
-This starter kit has all the same requirements as the rest of Statamic. Nothing special.
+This package will need your laravel application to have the following
 
-* PHP
-* Composer
-* Bunch of php extensions
-* A web server
-* Git
-
-If you want you can checkout a more detailed list on [Statamic's docs](https://statamic.dev/requirements).
+* PHP 7.1 or higher
