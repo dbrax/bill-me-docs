@@ -7,7 +7,7 @@
         "laravel-mix": "^4.0.15",
         "laravel-mix-purgecss": "^4.1.0",
         "moment": "^2.24.0",
-        "postcss-nested": "^4.1.2",
+        "postcss-nested": "^7.0.36",
         "vue": "^2.6.10"
     },
     "devDependencies": {
