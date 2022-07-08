@@ -6,7 +6,7 @@
         "highlight.js": "^11.2.0",
         "laravel-mix": "^6.0.28",
         "laravel-mix-purgecss": "^6.0.0",
-        "moment": "^2.24.0",
+        "moment": "^2.29.4",
         "postcss-nested": "^5.0.6",
         "vue": "^2.6.10"
     },
